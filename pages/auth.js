@@ -133,7 +133,7 @@ const Auth = () => {
         )}
         
         <div className="mb-6 mt-6">
-           <Button size="lg" color="white" className="w-full rounded mr-6 bg-eleck-primary text-white hover:bg-eleck-secondary hover:shadow-lg font-source-sans-pro">
+           <Button size="md" color="white" className="text-md w-full rounded mr-6 bg-eleck-primary text-white hover:bg-eleck-secondary hover:shadow-lg font-source-sans-pro">
             {variant=== 'login'? 'LOGIN' : 'SIGN UP'}
             </Button>
         </div>

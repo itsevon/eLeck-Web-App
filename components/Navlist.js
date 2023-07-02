@@ -6,7 +6,7 @@ const Navlist = () => {
     <div>
       <div>
         <nav href='/'>
-          <img src='/images/eleck-logo.png' className='h-12 m-6 mb-24' alt='logo' />
+          <img src='/images/eleck-logo.png' className='h-10 m-6 ml-10 mb-24' alt='logo' />
         </nav>
         {/* <ul>
           <li>
