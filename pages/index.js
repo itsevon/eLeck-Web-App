@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import Head from "next/head";
-import Login from "./Login";
 import Auth from './auth';
 
  
