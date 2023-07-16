@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Navlist = () => {
+const Header = () => {
   return (
     <div>
       <div>
@@ -21,4 +21,4 @@ const Navlist = () => {
   )
 }
 
-export default Navlist
+export default Header

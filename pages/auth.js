@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import '../styles/globals.css';
 import { Input,Button, Checkbox, Typography, Card } from "@material-tailwind/react";
 
 const Auth = () => {
