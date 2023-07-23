@@ -1,18 +1,37 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useContext } from 'react';
 import { Input,Button, Checkbox, Typography, Card } from "@material-tailwind/react";
+import AccountContext from '@/Context/AccountContext';
 
 const Auth = () => {
+  // const [registered, setRegistered] = useState(false)
+
   const [email, setEmail] = useState('')
-  const [first_name, setfirst_name] = useState('')
-  const [last_name, setlast_name] = useState('')
+  // const [first_name, setfirst_name] = useState('')
+  // const [last_name, setlast_name] = useState('')
   const [password, setPassword] = useState('')
   const [confirm_password, setConfirmPassword] = useState('')
+
+  const {signup} = useContext(AccountContext);
 
   let [variant, setVariant] = useState('login')
 
   const toggleVariant = useCallback(() => {
     setVariant((currentVariant) => currentVariant === 'login'? 'register' : 'login')
   }, [])
+
+
+  //user registration
+
+  const handleRegistration = (event) => {
+    event.preventDefault();
+    signup(email, password)
+      .then(data => {
+        console.log("Register Successfully", data);
+      })
+      .catch(err => {
+        console.log("Failed to register", err.message);
+      })
+  }
 
   return (
   //  <section className="font-source-sans-pro">
@@ -25,7 +44,7 @@ const Auth = () => {
       <form className='w-80'>
         <div className="flex flex-col gap-4">
           <div className="flex flex-row gap-4">
-            {variant === 'register' && (
+            {/* {variant === 'register' && (
             <Input 
               className='grow'
               containerProps={{ className: "min-w-[72px]" }}
@@ -50,7 +69,7 @@ const Auth = () => {
               value={last_name}
               required
               />
-            )}
+            )} */}
           </div>
 
           <Input 
@@ -132,7 +151,9 @@ const Auth = () => {
         )}
         
         <div className="mb-6 mt-6">
-           <Button size="md" color="white" className="text-md w-full rounded mr-6 bg-eleck-primary text-white hover:bg-eleck-secondary hover:shadow-lg font-source-sans-pro">
+           <Button size="md" color="white" className="text-md w-full rounded mr-6 bg-eleck-primary text-white hover:bg-eleck-secondary hover:shadow-lg font-source-sans-pro"
+            onClick={handleRegistration}
+           >
             {variant=== 'login'? 'LOGIN' : 'SIGN UP'}
             </Button>
         </div>

@@ -3,6 +3,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import Header from '../components/Header'
 
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
