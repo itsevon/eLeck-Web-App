@@ -9,41 +9,41 @@ import AccountState from '@/States/AccountState';
 
  
  
-// export default function Home() {
-//   const { data: session, status } = useSession();
-
-//   if(status === 'loading') {
-//     return null;  
-//   }
-
-//   if (session) {
-//     return (
-//       <>
-//         Signed in as {session?.user?.email} <br />
-//         <button onClick={() => signOut()}>Sign out</button>
-//       </>
-//     )
-//   }
-//   return (
-//     <>
-//       Not signed in <br />
-//       <button onClick={() => signIn()}>Sign in</button>
-//     </>
-//   )
-// }
-
-
 export default function Home() {
+  const { data: session, status } = useSession();
+
+  if(status === 'loading') {
+    return null;  
+  }
+
+  if (session) {
+    return (
+      <>
+        Signed in as {session?.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
   return (
     <>
-      <Head>
-        <title>e L e c k</title>
-        <meta name="description" content="e L e c k"/>
-      </Head>
-      <Auth />
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
     </>
   )
 }
+
+
+// export default function Home() {
+//   return (
+//     <>
+//       <Head>
+//         <title>e L e c k</title>
+//         <meta name="description" content="e L e c k"/>
+//       </Head>
+//       <Auth />
+//     </>
+//   )
+// }
 
 
 // export default function Home() {
