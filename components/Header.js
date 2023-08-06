@@ -214,7 +214,7 @@ export default function Header() {
   return (
     <>
       <div className="m-6 ml-10 mb-24 relative flex items-center text-blue-gray-900">
-        <img src='/static/images/eleck-logo.png' className='h-10' alt='logo' />
+        <img src='/static/images/eleck-logo.svg' className='h-10' alt='logo' />
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
         </div>
