@@ -1,12 +1,19 @@
 import NextAuth from "next-auth/next";
 import CognitoProvider from "next-auth/providers/cognito";
+import { signIn, signOut } from "next-auth/react";
 
 export default NextAuth({
     providers: [
         CognitoProvider({
-            userPoolId: process.env.POOL_ID,
-            ClientId: process.env.APP_CLIENT_ID,
+            clientId: process.env.COGNITO_CLIENT_ID,
+            clientSecret: process.env.COGNITO_CLIENT_SECRET,
             issuer: process.env.COGNITO_ISSUER,
         })
-    ]
+    ],
+
+//     pages: {
+//     signIn: 'auth/signin',
+//     signOut: 'auth/signout'
+// }
 });
+

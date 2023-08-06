@@ -1,6 +1,6 @@
 import { SessionProvider } from "next-auth/react"
 import '../styles/globals.css'
-
+import Header from "@/components/Header"
 
 
 export default function MyApp({
@@ -9,6 +9,7 @@ export default function MyApp({
   return (
     <>
     <SessionProvider session={session}>
+      {/* <Header /> */}
       <Component {...pageProps}/>
     </SessionProvider>
 
