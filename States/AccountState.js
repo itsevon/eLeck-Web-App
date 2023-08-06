@@ -2,8 +2,8 @@ import React from 'react';
 import AccountContext from '@/Context/AccountContext';
 
 const AccountState = (props) => {
+    
     //////////user registrastion
-
     const signup = async (email, password) => {
         return await new Promise((resolve, reject) => {
             var attributeList = [];
@@ -17,7 +17,7 @@ const AccountState = (props) => {
 
             attributeList.push(atttributeEmail);
 
-            userPool.signup(email, password, attributeList, null, function (err, user) {
+            userPool.signUp('email', 'password', attributeList, null, function (err, data) {
                 if (err) {
                     console.log("Failed to register", err.message);
                     reject();

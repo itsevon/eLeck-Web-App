@@ -6,7 +6,7 @@ export default NextAuth({
         CognitoProvider({
             userPoolId: process.env.POOL_ID,
             ClientId: process.env.APP_CLIENT_ID,
-            domain: process.env.CONGNITO_DOMAIN
+            issuer: process.env.COGNITO_ISSUER,
         })
     ]
 });

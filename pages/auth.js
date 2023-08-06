@@ -2,6 +2,7 @@ import { useCallback, useState, useContext } from 'react';
 import { Input,Button, Checkbox, Typography, Card } from "@material-tailwind/react";
 import AccountContext from '@/Context/AccountContext';
 
+
 const Auth = () => {
   // const [registered, setRegistered] = useState(false)
 
@@ -11,7 +12,7 @@ const Auth = () => {
   const [password, setPassword] = useState('')
   const [confirm_password, setConfirmPassword] = useState('')
 
-  const {signup} = useContext(AccountContext);
+  // const {signup, authenticate} = useContext(AccountContext);
 
   let [variant, setVariant] = useState('login')
 
@@ -34,7 +35,18 @@ const Auth = () => {
   }
 
   //login functionality
-  
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    authenticate(email, password)
+    .then(data => {
+      console.log("Register Successfully", data)
+    })
+    .catch(err => {
+      console.log("Failed to register", err.message);
+    })
+  }
+
 
   return (
   //  <section className="font-source-sans-pro">

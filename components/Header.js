@@ -88,14 +88,16 @@ function ProfileMenu() {
               }`}
             >
               {React.createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                // className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                className: `h-4 w-4`,
                 strokeWidth: 2,
               })}
               <Typography
                 as="span"
                 variant="small"
                 className="font-normal"
-                color={isLastItem ? "red" : "inherit"}
+                // color={isLastItem ? "red" : "inherit"}
+                color="inherit"
               >
                 {label}
               </Typography>
