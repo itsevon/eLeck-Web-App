@@ -17,7 +17,7 @@ const AccountState = (props) => {
 
             attributeList.push(atttributeEmail);
 
-            userPool.signUp('email', 'password', attributeList, null, function (err, data) {
+            userPool.signUp(email, password, attributeList, null, function (err, data) {
                 if (err) {
                     console.log("Failed to register", err.message);
                     reject();

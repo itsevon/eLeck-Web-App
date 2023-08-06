@@ -10,10 +10,5 @@ export default NextAuth({
             issuer: process.env.COGNITO_ISSUER,
         })
     ],
-
-//     pages: {
-//     signIn: 'auth/signin',
-//     signOut: 'auth/signout'
-// }
 });
 
