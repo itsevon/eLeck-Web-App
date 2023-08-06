@@ -12,7 +12,7 @@ const Auth = () => {
   const [password, setPassword] = useState('')
   const [confirm_password, setConfirmPassword] = useState('')
 
-  const {signup} = useContext(AccountContext);
+  // const {signup} = useContext(AccountContext);
   // const {signup, authenticate} = useContext(AccountContext);
 
   let [variant, setVariant] = useState('login')
