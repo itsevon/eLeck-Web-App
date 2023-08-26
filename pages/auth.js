@@ -1,10 +1,12 @@
 import { useCallback, useState, useContext } from 'react';
+import { useSession, signIn, signOut } from "next-auth/react"
 import { Input,Button, Checkbox, Typography, Card } from "@material-tailwind/react";
-import AccountContext from '@/Context/AccountContext';
+// import AccountContext from '@/Context/AccountContext';
 
 
 const Auth = () => {
   // const [registered, setRegistered] = useState(false)
+  const { data: session, status } = useSession();
 
   const [email, setEmail] = useState('')
   // const [first_name, setfirst_name] = useState('')
@@ -22,7 +24,7 @@ const Auth = () => {
   }, [])
 
 
-  //user registration
+  // user registration
 
   const handleRegistration = (event) => {
     event.preventDefault();
@@ -35,7 +37,7 @@ const Auth = () => {
       })
   }
 
-  //login functionality
+  // login functionality
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -168,11 +170,13 @@ const Auth = () => {
         
         <div className="mb-6 mt-6">
            <Button size="md" color="white" className="text-md w-full rounded mr-6 bg-eleck-primary text-white hover:bg-eleck-secondary hover:shadow-lg font-source-sans-pro"
-            onClick={handleRegistration}
+            // onClick={handleRegistration}
+            onClick={() => signIn()}
            >
             {variant=== 'login'? 'LOGIN' : 'SIGN UP'}
             </Button>
         </div>
+        
         <div className='text-eleck-primary mt-6 flex justify-center'>
           {variant === 'login' ? 'First time using eLeck?': 'Already have an account?'}
           <span onClick={toggleVariant} className='text-blue-gray-300 ml-1 cursor-pointer'>

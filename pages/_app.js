@@ -4,7 +4,8 @@ import Header from "@/components/Header"
 
 
 export default function MyApp({
-  Component, pageProps: { session, ...pageProps }
+  Component,
+  pageProps: { session, ...pageProps },
 }) {
   return (
     <>
@@ -12,7 +13,6 @@ export default function MyApp({
       <Header />
       <Component {...pageProps}/>
     </SessionProvider>
-
     </>
   )
 }

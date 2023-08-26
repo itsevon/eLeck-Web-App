@@ -1,8 +1,7 @@
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import CognitoProvider from "next-auth/providers/cognito";
-import { signIn, signOut } from "next-auth/react";
 
-export default NextAuth({
+export const authOptions = {
     providers: [
         CognitoProvider({
             clientId: process.env.COGNITO_CLIENT_ID,
@@ -10,5 +9,6 @@ export default NextAuth({
             issuer: process.env.COGNITO_ISSUER,
         })
     ],
-});
+};
 
+export default NextAuth(authOptions)
